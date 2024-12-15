@@ -2,7 +2,7 @@
 
 Each label in the repository has a description attached that describes what the label means.
 
-There are 7 label categories in the repository:
+There are 8 label categories in the repository:
 
 - **Area labels**: These labels denote the general area of the project an issue or PR affects. These start with [`A-`][area].
 - **Category labels**: These labels denote the type of issue or change being made, for example https://github.com/paradigmxyz/reth/labels/C-bug or https://github.com/paradigmxyz/reth/labels/C-enhancement. These start with [`C-`][category].

@@ -133,7 +133,7 @@ Types of tests include:
 
 By default, `cargo test` does not select any packages, in order to run individual tests by name (
 e.g. `cargo test mytest`) navigate to the directory of that file (e.g. `reth/crates/rpc/rpc/`) or use
-the `-p <package-name>` option to run specific tests of a crate from anywhere in the
+the `-p <package-name>` option to run specific tests of a create from anywhere in the
 workspace (`cargo test -p reth-rpc mytest`).
 
 See also [cargo-test](https://doc.rust-lang.org/cargo/commands/cargo-test.html) for more information on running tests.

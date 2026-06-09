@@ -35,12 +35,12 @@ jobs:
     needs:
       - prepare-reth
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           fetch-depth: 0
 
       - name: Download reth image
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
         with:
           name: artifacts
           path: /tmp
@@ -52,7 +52,7 @@ jobs:
           docker image ls -a
 
       - name: Run kurtosis
-        uses: ethpandaops/kurtosis-assertoor-github-action@v1
+        uses: ethpandaops/kurtosis-assertoor-github-action@5932604b244dbd2ddb811516b516a9094f4d2c2f # v1
         with:
           ethereum_package_args: '.github/assets/kurtosis_network_params.yaml'
 
@@ -63,7 +63,7 @@ jobs:
       group: Reth
     steps:
       - name: Slack Webhook Action
-        uses: rtCamp/action-slack-notify@v2
+        uses: rtCamp/action-slack-notify@33ca3be66c6f378fe1610fd1d5258632dbed5e58 # v2.4.0
         env:
           SLACK_COLOR: ${{ job.status }}
           SLACK_MESSAGE: "Failed run: https://github.com/paradigmxyz/reth/actions/runs/${{ github.run_id }}"

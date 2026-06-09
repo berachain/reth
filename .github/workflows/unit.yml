@@ -44,15 +44,15 @@ jobs:
             total_partitions: 2
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
-      - uses: rui314/setup-mold@v1
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: rui314/setup-mold@9c9c13bf4c3f1adef0cc596abc155580bcb04444 # v1
       - uses: dtolnay/rust-toolchain@stable
-      - uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
         with:
           cache-on-failure: true
       - uses: taiki-e/install-action@nextest
       - if: "${{ matrix.type == 'book' }}"
-        uses: arduino/setup-protoc@v3
+        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run tests
@@ -72,19 +72,19 @@ jobs:
       RUST_BACKTRACE: 1
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - name: Checkout ethereum/tests
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           repository: ethereum/tests
           ref: 81862e4848585a438d64f911a19b3825f0f4cd95
           path: testing/ef-tests/ethereum-tests
           submodules: recursive
           fetch-depth: 1
-      - uses: rui314/setup-mold@v1
+      - uses: rui314/setup-mold@9c9c13bf4c3f1adef0cc596abc155580bcb04444 # v1
       - uses: dtolnay/rust-toolchain@stable
       - uses: taiki-e/install-action@nextest
-      - uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
         with:
           cache-on-failure: true
       - run: cargo nextest run --release -p ef-tests --features "asm-keccak ef-tests"
@@ -97,10 +97,10 @@ jobs:
       RUST_BACKTRACE: 1
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
-      - uses: rui314/setup-mold@v1
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: rui314/setup-mold@9c9c13bf4c3f1adef0cc596abc155580bcb04444 # v1
       - uses: dtolnay/rust-toolchain@stable
-      - uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
         with:
           cache-on-failure: true
       - name: Run doctests
